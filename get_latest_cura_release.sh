@@ -27,7 +27,7 @@ mkdir -p $baseDir
 
 if [[ ! -e "$baseDir/latestReleaseInfo.json" ]]; then
 
-  curl -SsL https://api.github.com/repos/Ultimaker/Cura/releases/latest > $baseDir/latestReleaseInfo.json
+  curl -SsL https://github.com/smartavionics/Cura/releases > $baseDir/latestReleaseInfo.json
 
 fi
 
@@ -38,7 +38,7 @@ if [[ $# -gt 1 ]]; then
   VER=$2
 
   if [[ ! -e "$baseDir/releases.json" ]]; then
-    curl -SsL https://api.github.com/repos/Ultimaker/Cura/releases > $baseDir/releases.json
+    curl -SsL https://github.com/smartavionics/Cura/releases > $baseDir/releases.json
   fi
 
   allReleases=$(cat $baseDir/releases.json)
